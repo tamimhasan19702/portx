@@ -37,7 +37,8 @@ if (!function_exists('portx_setup')):
 
         // This theme uses wp_nav_menu() in two locations.
         register_nav_menus(array(
-            'primary' => __('Primary Menu', 'portx'),
+            'main-menu' => __('Main Menu', 'portx'),
+            'footer-menu' => __('Footer Menu', 'portx'),
         ));
 
         /*

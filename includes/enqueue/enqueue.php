@@ -17,6 +17,8 @@ if (!function_exists('portx_enqueue_style')):
         wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main.css');
 
 
+
+
         // theme scripts
         wp_enqueue_script('jquery');
         wp_enqueue_script('waypoints', get_template_directory_uri() . '/assets/js/vendor/waypoints.js', ['jquery'], null, true);

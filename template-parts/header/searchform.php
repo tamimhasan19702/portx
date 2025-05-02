@@ -1,3 +1,9 @@
+<?php
+
+
+
+?>
+
 <div class="search__popup z-index-8">
     <div class="container">
         <div class="row">

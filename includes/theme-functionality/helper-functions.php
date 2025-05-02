@@ -242,3 +242,13 @@ function portx_kses($content = '')
     return wp_kses($content, $allowed_html);
 }
 add_action('after_setup_theme', 'portx_setup');
+
+
+function portx_header_menu()
+{
+    wp_nav_menu(array(
+        'theme_location' => 'main-menu',
+        'menu_class' => 'tp-main-menu-content',
+        'walker' => new Portx_Walker_Nav_Menu(),
+    ));
+}

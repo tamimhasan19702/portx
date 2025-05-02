@@ -17,8 +17,7 @@ function portx_header_section()
 {
     if (class_exists('Kirki\Section')) {
         \Kirki::add_section('portx_header_section', [
-            'title' => esc_html__('Portx Header Logo', 'portx'),
-            'description' => esc_html__('Portx Header Section Description', 'portx'),
+            'title' => esc_html__('Portx Header Options', 'portx'),
             'panel' => 'portx_kirki_panel',
             'priority' => 160,
         ]);
@@ -33,6 +32,47 @@ function portx_header_section()
                 'section' => 'portx_header_section',
                 'default' => get_template_directory_uri() . '/assets/img/logo/logo-white.png',
             ]);
+
+            \Kirki::add_field('portx_header_button_text', [
+                'type' => 'text',
+                'settings' => 'portx_header_button_text',
+                'label' => esc_html__('Header Button Text', 'portx'),
+                'description' => esc_html__('Text for the header button.', 'portx'),
+                'section' => 'portx_header_section',
+                'default' => esc_html__('Request a Quote', 'portx'),
+            ]);
+
+            \Kirki::add_field('portx_header_button_url', [
+                'type' => 'url',
+                'settings' => 'portx_header_button_url',
+                'label' => esc_html__('Header Button URL', 'portx'),
+                'description' => esc_html__('URL for the header button.', 'portx'),
+                'section' => 'portx_header_section',
+                'default' => esc_url(home_url('/contact')),
+            ]);
+
+            \Kirki::add_field('portx_search_logo', [
+                'type' => 'image',
+                'settings' => 'portx_search_logo',
+                'label' => esc_html__('Search Form Logo', 'portx'),
+                'description' => esc_html__('Logo for the search form.', 'portx'),
+                'section' => 'portx_header_section',
+                'default' => get_template_directory_uri() . '/assets/img/logo/search-logo.png',
+            ]);
+
+            \Kirki::add_field('portx_search_placeholder', [
+                'type' => 'text',
+                'settings' => 'portx_search_placeholder',
+                'label' => esc_html__('Search Placeholder Text', 'portx'),
+                'description' => esc_html__('The placeholder text that will be displayed in the search form.', 'portx'),
+                'section' => 'portx_header_section',
+                'default' => esc_html__('Search for...', 'portx'),
+            ]);
+
+
+        }
+
+        if (class_exists('Kirki\Field')) {
             \Kirki::add_field('portx_contact_info', [
                 'type' => 'repeater',
                 'settings' => 'portx_contact_info',
@@ -68,6 +108,46 @@ function portx_header_section()
             ]);
 
 
+
+            if (class_exists('Kirki\Field')) {
+
+                \Kirki::add_field('portx_demo_menu', [
+                    'type' => 'repeater',
+                    'settings' => 'portx_demo_menu',
+                    'label' => esc_html__('Demo Menu Options', 'portx'),
+                    'description' => esc_html__('Add options for demo menu.', 'portx'),
+                    'section' => 'portx_header_section',
+                    'priority' => 21,
+                    'row_label' => [
+                        'type' => 'text',
+                        'value' => esc_attr__('Demo Option', 'portx'),
+                    ],
+                    'button_label' => esc_html__('Add New Demo Option', 'portx'),
+                    'fields' => [
+                        'image' => [
+                            'type' => 'image',
+                            'label' => esc_html__('Demo Image', 'portx'),
+                            'description' => esc_html__('Select an image for the demo option.', 'portx'),
+                        ],
+                        'button_text' => [
+                            'type' => 'text',
+                            'label' => esc_html__('Button Text', 'portx'),
+                            'description' => esc_html__('Text for the demo button.', 'portx'),
+                        ],
+                        'link' => [
+                            'type' => 'url',
+                            'label' => esc_html__('Link', 'portx'),
+                            'description' => esc_html__('URL for the demo option.', 'portx'),
+                        ],
+                        'header' => [
+                            'type' => 'text',
+                            'label' => esc_html__('Header', 'portx'),
+                            'description' => esc_html__('Header for the demo option.', 'portx'),
+                        ],
+                    ],
+                ]);
+
+            }
         }
     }
 }
