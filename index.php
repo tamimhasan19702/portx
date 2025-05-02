@@ -9,7 +9,7 @@ get_header();
         <div class="swiper-wrapper">
             <div class=" swiper-slide tp-slider__item p-relative">
                 <div class="tp-slider-right-bg tp-slider__height d-flex align-items-center "
-                    data-background="assets/img/slider/slider-img.jpg">
+                    data-background="<?php echo get_template_directory_uri(); ?>/assets/img/slider/slider-img.jpg">
                     <div class="tp-slider__social">
                         <ul>
                             <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -50,7 +50,7 @@ get_header();
             </div>
             <div class=" swiper-slide tp-slider__item p-relative">
                 <div class="tp-slider-right-bg tp-slider__height d-flex align-items-center "
-                    data-background="assets/img/slider/slider-img-2.jpg">
+                    data-background="<?php echo get_template_directory_uri(); ?>/assets/img/slider/slider-img-2.jpg">
                     <div class="tp-slider__social">
                         <ul>
                             <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -91,7 +91,7 @@ get_header();
             </div>
             <div class=" swiper-slide tp-slider__item p-relative">
                 <div class="tp-slider-right-bg tp-slider__height d-flex align-items-center "
-                    data-background="assets/img/slider/slider-img-3.jpg">
+                    data-background="<?php echo get_template_directory_uri(); ?>/assets/img/slider/slider-img-3.jpg">
                     <div class="tp-slider__social">
                         <ul>
                             <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -141,10 +141,10 @@ get_header();
 <!-- services area start -->
 <div class="services-area tp-services__ptb pt-120 pb-90 p-relative fix">
     <div class="tp-services__tran  wow fadeInDownBig    ">
-        <img src="assets/img/services/services-tran.png" alt="">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/services/services-tran.png" alt="">
     </div>
     <div class="tp-services__shap">
-        <img src="assets/img/services/services-left-img.png" alt="">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/services/services-left-img.png" alt="">
     </div>
     <div class="container">
         <div class="row">
@@ -163,7 +163,8 @@ get_header();
                 <div class="tp-services__item p-relative fix mb-30  wow fadeInUp   " data-wow-duration=".9s"
                     data-wow-delay=".5s">
                     <div class="tp-services__hover-img">
-                        <img src="assets/img/services/services-hover-img.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/services/services-hover-img.jpg"
+                            alt="">
                     </div>
                     <div class="tp-services__wrap z-index-2 d-flex align-items-start">
                         <div class="tp-services__icon">
@@ -183,7 +184,8 @@ get_header();
                 <div class="tp-services__item p-relative fix mb-30 wow fadeInUp   " data-wow-duration=".9s"
                     data-wow-delay=".6s">
                     <div class="tp-services__hover-img">
-                        <img src="assets/img/services/services-hover-img.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/services/services-hover-img.jpg"
+                            alt="">
                     </div>
                     <div class="tp-services__wrap z-index-2 d-flex align-items-start">
                         <div class="tp-services__icon">
@@ -203,7 +205,8 @@ get_header();
                 <div class="tp-services__item p-relative fix mb-30 wow fadeInUp   " data-wow-duration=".9s"
                     data-wow-delay=".7s">
                     <div class="tp-services__hover-img">
-                        <img src="assets/img/services/services-hover-img.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/services/services-hover-img.jpg"
+                            alt="">
                     </div>
                     <div class="tp-services__wrap z-index-2 d-flex align-items-start">
                         <div class="tp-services__icon">
@@ -223,7 +226,8 @@ get_header();
                 <div class="tp-services__item p-relative fix mb-30 wow fadeInUp   " data-wow-duration=".9s"
                     data-wow-delay=".8s">
                     <div class="tp-services__hover-img">
-                        <img src="assets/img/services/services-hover-img.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/services/services-hover-img.jpg"
+                            alt="">
                     </div>
                     <div class="tp-services__wrap z-index-2 d-flex align-items-start">
                         <div class="tp-services__icon">
@@ -243,7 +247,8 @@ get_header();
                 <div class="tp-services__item p-relative fix mb-30 wow fadeInUp   " data-wow-duration=".9s"
                     data-wow-delay=".9s">
                     <div class="tp-services__hover-img">
-                        <img src="assets/img/services/services-hover-img.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/services/services-hover-img.jpg"
+                            alt="">
                     </div>
                     <div class="tp-services__wrap z-index-2 d-flex align-items-start">
                         <div class="tp-services__icon">
@@ -265,7 +270,7 @@ get_header();
 <!-- services area end -->
 <!-- video area start -->
 <div class="video-area tp-video__height-video-bg tp-video__bg-opacity p-relative jarallax"
-    style="background-image: url(assets/img/video/home-1.jpg);">
+    style="background-image: url( <?php echo get_template_directory_uri() ?>/assets/img/video/home-1.jpg);">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -336,10 +341,12 @@ get_header();
                     data-wow-delay=".5s">
                     <div class="tp-about__right-img p-relative text-end">
                         <div class="tp-about__lg-img ml-40">
-                            <img class="w-100" src="assets/img/about/about-lg.jpg" alt="">
+                            <img class="w-100"
+                                src="<?php echo get_template_directory_uri() ?> /assets/img/about/about-lg.jpg" alt="">
                         </div>
                         <div class="tp-about__sm-img">
-                            <img class="w-100" src="assets/img/about/about-sm.jpg" alt="">
+                            <img class="w-100"
+                                src="<?php echo get_template_directory_uri() ?> /assets/img/about/about-sm.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -387,7 +394,9 @@ get_header();
                 <div class="swiper-slide">
                     <div class="tp-project__item p-relative">
                         <div class="tp-project__thumb ">
-                            <img class="w-100" src="assets/img/project/project-1.jpg" alt="">
+                            <img class="w-100"
+                                src="<?php echo get_template_directory_uri() ?>/assets/img/project/project-1.jpg"
+                                alt="">
                         </div>
                         <div class="tp-project-box">
                             <div class="tp-project-content">
@@ -406,7 +415,9 @@ get_header();
                 <div class="swiper-slide">
                     <div class="tp-project__item p-relative">
                         <div class="tp-project__thumb ">
-                            <img class="w-100" src="assets/img/project/project-2.jpg" alt="">
+                            <img class="w-100"
+                                src="<?php echo get_template_directory_uri() ?>/assets/img/project/project-2.jpg"
+                                alt="">
                         </div>
                         <div class="tp-project-box">
                             <div class="tp-project-content">
@@ -425,7 +436,9 @@ get_header();
                 <div class="swiper-slide">
                     <div class="tp-project__item p-relative">
                         <div class="tp-project__thumb ">
-                            <img class="w-100" src="assets/img/project/project-3.jpg" alt="">
+                            <img class="w-100"
+                                src="<?php echo get_template_directory_uri() ?>/assets/img/project/project-3.jpg"
+                                alt="">
                         </div>
                         <div class="tp-project-box">
                             <div class="tp-project-content">
@@ -444,7 +457,9 @@ get_header();
                 <div class="swiper-slide">
                     <div class="tp-project__item p-relative">
                         <div class="tp-project__thumb ">
-                            <img class="w-100" src="assets/img/project/project-4.jpg" alt="">
+                            <img class="w-100"
+                                src="<?php echo get_template_directory_uri() ?>/assets/img/project/project-4.jpg"
+                                alt="">
                         </div>
                         <div class="tp-project-box">
                             <div class="tp-project-content">
@@ -536,8 +551,8 @@ get_header();
 <!-- challenges area end -->
 
 <!-- cta area start -->
-<section class="cta-area cta-opasity pt-170 pb-180 p-relative include-bg jarallax "
-    data-background="assets/img/bg/cta1-bg.jpg">
+<section class="cta-area cta-opacity pt-170 pb-180 p-relative include-bg jarallax"
+    data-background="<?php echo esc_url(get_template_directory_uri() . '/assets/img/bg/cta1-bg.jpg'); ?>">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -562,10 +577,10 @@ get_header();
 <!-- choose area start -->
 <div class="choose-area pt-120 pb-50 p-relative z-index-1">
     <div class="tp-choose__circel-img d-none d-md-block">
-        <img src="assets/img/choose/choose-circel-img.png" alt="">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/choose/choose-circel-img.png" alt="">
     </div>
     <div class="red-trick wow fadeInUp   d-none d-xxl-block">
-        <img src="assets/img/choose/trick-img.png" alt="">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/choose/trick-img.png" alt="">
     </div>
     <div class="container">
         <div class="row">
@@ -681,13 +696,14 @@ get_header();
 <div class="features-area tp-features__bg-color p-relative pt-10 fix">
     <div class="tp-features__class-fix">
         <div class="tp-features__shap-img">
-            <img src="assets/img/features/features-shap-img-2.png" alt="">
+            <img src="<?php echo get_template_directory_uri() ?>/assets/img/features/features-shap-img-2.png" alt="">
         </div>
         <div class="container mb-110">
             <div class="row align-items-xl-end">
                 <div class="col-xl-5 col-lg-5 col-md-12">
                     <div class="tp-features__img wow fadeInDownBig   ">
-                        <img src="assets/img/features/features-img.png" alt="">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/features/features-img.png"
+                            alt="">
                     </div>
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-12">
@@ -698,7 +714,9 @@ get_header();
                             </h2>
                             <div class="tp-features__list">
                                 <div class="tp-features__single d-flex align-items-start">
-                                    <span class="mr-30"><img src="assets/img/features/icon.png" alt="">
+                                    <span class="mr-30"><img
+                                            src="<?php echo get_template_directory_uri() ?>/assets/img/features/icon.png"
+                                            alt="">
                                     </span>
                                     <p>Providing an independent advice and identifying the right fit for you,
                                         sourced
@@ -706,7 +724,9 @@ get_header();
                                     </p>
                                 </div>
                                 <div class="tp-features__single d-flex align-items-start">
-                                    <span class="mr-30"><img src="assets/img/features/icon.png" alt="">
+                                    <span class="mr-30"><img
+                                            src="<?php echo get_template_directory_uri() ?>/assets/img/features/icon.png"
+                                            alt="">
                                     </span>
                                     <p>Providing an independent advice and identifying the right fit for you,
                                         sourced
@@ -724,40 +744,48 @@ get_header();
                     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                         <div class="tp-brand__single p-relative">
                             <span class="tp-brand__hover-logo ">
-                                <img src="assets/img/brand/brand-bg.jpg" alt="">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/brand/brand-bg.jpg"
+                                    alt="">
                             </span>
                             <span class="tp-brand__logo">
-                                <img src="assets/img/brand/brand-1.png" alt="">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/brand/brand-1.png"
+                                    alt="">
                             </span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                         <div class="tp-brand__single p-relative">
                             <span class="tp-brand__hover-logo ">
-                                <img src="assets/img/brand/brand-bg.jpg" alt="">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/brand/brand-bg.jpg"
+                                    alt="">
                             </span>
                             <span class="tp-brand__logo">
-                                <img src="assets/img/brand/brand-2.png" alt="">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/brand/brand-2.png"
+                                    alt="">
                             </span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                         <div class="tp-brand__single p-relative">
                             <span class="tp-brand__hover-logo ">
-                                <img src="assets/img/brand/brand-bg.jpg" alt="">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/brand/brand-bg.jpg"
+                                    alt="">
                             </span>
                             <span class="tp-brand__logo">
-                                <img src="assets/img/brand/brand-3.png" alt="">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/brand/brand-3.png"
+                                    alt="">
                             </span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                         <div class="tp-brand__single p-relative">
                             <span class="tp-brand__hover-logo ">
-                                <img src="assets/img/brand/brand-bg.jpg" alt="">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/brand/brand-bg.jpg"
+                                    alt="">
                             </span>
                             <span class="tp-brand__logo">
-                                <img src="assets/img/brand/brand-4.png" alt="">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/brand/brand-4.png"
+                                    alt="">
                             </span>
                         </div>
                     </div>
@@ -796,7 +824,8 @@ get_header();
                             <div class="swiper-slide ">
                                 <div class="tp-testimonial__item p-relative fix">
                                     <div class="shap-img">
-                                        <img src="assets/img/testimonial/shap-1.png" alt="">
+                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/testimonial/shap-1.png"
+                                            alt="">
                                     </div>
                                     <div class="quote-img">
                                         <span> <i class="flaticon-quote"></i></span>
@@ -810,7 +839,8 @@ get_header();
                                     </div>
                                     <div class="tp-testimonial__avata d-flex align-items-start">
                                         <div class="tp-testimonial__avata-img p-relative mr-30">
-                                            <img src="assets/img/testimonial/testimonial-1.jpg" alt="">
+                                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/testimonial/testimonial-1.jpg"
+                                                alt="">
                                             <div class="icon">
                                                 <i class="flaticon-double-quotes"></i>
                                             </div>
@@ -835,7 +865,8 @@ get_header();
                             <div class="swiper-slide ">
                                 <div class="tp-testimonial__item p-relative fix">
                                     <div class="shap-img">
-                                        <img src="assets/img/testimonial/shap-1.png" alt="">
+                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/testimonial/shap-1.png"
+                                            alt="">
                                     </div>
                                     <div class="quote-img">
                                         <span> <i class="flaticon-quote"></i></span>
@@ -849,7 +880,8 @@ get_header();
                                     </div>
                                     <div class="tp-testimonial__avata d-flex align-items-start">
                                         <div class="tp-testimonial__avata-img p-relative mr-30">
-                                            <img src="assets/img/testimonial/testimonial-5.jpg" alt="">
+                                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/testimonial/testimonial-5.jpg"
+                                                alt="">
                                             <div class="icon">
                                                 <i class="flaticon-double-quotes"></i>
                                             </div>
@@ -904,7 +936,9 @@ get_header();
                             <div class="team__slider-wrapper">
                                 <div class="team__item p-relative ">
                                     <div class="team__thumb fix">
-                                        <img class="w-100" src="assets/img/team/team-1.jpg" alt="">
+                                        <img class="w-100"
+                                            src="<?php echo get_template_directory_uri() ?>/assets/img/team/team-1.jpg"
+                                            alt="">
                                         <div class="team__wrapp">
                                             <div class="team__content">
                                                 <h3 class="team__title-1"><a href="team-details.html">Helen
@@ -935,7 +969,9 @@ get_header();
                             <div class="team__slider-wrapper">
                                 <div class="team__item p-relative">
                                     <div class="team__thumb">
-                                        <img class="w-100" src="assets/img/team/team-2.jpg" alt="">
+                                        <img class="w-100"
+                                            src="<?php echo get_template_directory_uri() ?>/assets/img/team/team-2.jpg"
+                                            alt="">
                                         <div class="team__wrapp">
                                             <div class="team__content">
                                                 <h3 class="team__title-1"><a href="team-details.html">Helen
@@ -966,7 +1002,9 @@ get_header();
                             <div class="team__slider-wrapper">
                                 <div class="team__item p-relative">
                                     <div class="team__thumb">
-                                        <img class="w-100" src="assets/img/team/team-3.jpg" alt="">
+                                        <img class="w-100"
+                                            src="<?php echo get_template_directory_uri() ?>/assets/img/team/team-3.jpg"
+                                            alt="">
                                         <div class="team__wrapp">
                                             <div class="team__content">
                                                 <h3 class="team__title-1"><a href="team-details.html">Helen
@@ -997,7 +1035,9 @@ get_header();
                             <div class="team__slider-wrapper">
                                 <div class="team__item p-relative">
                                     <div class="team__thumb">
-                                        <img class="w-100" src="assets/img/team/team-4.jpg" alt="">
+                                        <img class="w-100"
+                                            src="<?php echo get_template_directory_uri() ?>/assets/img/team/team-4.jpg"
+                                            alt="">
                                         <div class="team__wrapp">
                                             <div class="team__content">
                                                 <h3 class="team__title-1"><a href="team-details.html">Helen
@@ -1051,7 +1091,8 @@ get_header();
             <div class="col-xl-4 col-md-6">
                 <div class="tpblog  pb-30 wow fadeInUp  " data-wow-duration=".9s" data-wow-delay=".3s">
                     <div class="tpblog__thumb fix">
-                        <a href="blog-details.html"><img src="assets/img/blog/blog-1.jpg" alt=""></a>
+                        <a href="blog-details.html"><img
+                                src="<?php echo get_template_directory_uri() ?>/assets/img/blog/blog-1.jpg" alt=""></a>
                     </div>
                     <div class="tpblog__content fix p-relative">
                         <div class="tpblog__meta mb-10 mt-15">
@@ -1070,7 +1111,8 @@ get_header();
             <div class="col-xl-4 col-md-6">
                 <div class="tpblog pb-30 wow fadeInUp  " data-wow-duration=".9s" data-wow-delay=".6s">
                     <div class="tpblog__thumb fix">
-                        <a href="blog-details.html"><img src="assets/img/blog/blog-2.jpg" alt=""></a>
+                        <a href="blog-details.html"><img
+                                src="<?php echo get_template_directory_uri() ?>/assets/img/blog/blog-2.jpg" alt=""></a>
                     </div>
                     <div class="tpblog__content fix p-relative">
                         <div class="tpblog__meta mb-10 mt-15">
@@ -1090,7 +1132,8 @@ get_header();
             <div class="col-xl-4 col-md-6">
                 <div class="tpblog pb-30 wow fadeInUp  " data-wow-duration=".9s" data-wow-delay=".9s">
                     <div class="tpblog__thumb fix">
-                        <a href="blog-details.html"><img src="assets/img/blog/blog-3.jpg" alt=""></a>
+                        <a href="blog-details.html"><img
+                                src="<?php echo get_template_directory_uri() ?>/assets/img/blog/blog-3.jpg" alt=""></a>
                     </div>
                     <div class="tpblog__content fix p-relative">
                         <div class="tpblog__meta mb-10 mt-15">

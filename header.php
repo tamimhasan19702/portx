@@ -1,15 +1,21 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html <?php language_attributes(); ?> class="no-js">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Portx - Logistics and Transportation HTML Template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><?php bloginfo('name'); ?><?php wp_title('|', true, 'left'); ?></title>
+    <meta name="description" content="<?php bloginfo('description'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+    <?php if (has_site_icon()): ?>
+        <link rel="shortcut icon" href="<?php echo esc_url(get_site_icon_url()); ?>" type="image/x-icon">
+    <?php else: ?>
+        <link rel="shortcut icon"
+            href="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo/favicon.png'); ?>"
+            type="image/x-icon">
+    <?php endif; ?>
 
     <?php wp_head(); ?>
 </head>
@@ -45,7 +51,8 @@
             </div>
             <div class="tpoffcanvas__logo">
                 <a href="index.html">
-                    <img src="assets/img/logo/black-logo.png" alt="">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo/footer-logo.png'); ?>"
+                        alt="">
                 </a>
             </div>
             <div class="tp-main-menu-mobile"></div>
@@ -75,7 +82,8 @@
                         <div class="search__top d-flex justify-content-between align-items-center">
                             <div class="search__logo">
                                 <a href="index.html">
-                                    <img src="assets/img/logo/footer-logo.png" alt="logo">
+                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo/footer-logo.png'); ?>"
+                                        alt="logo">
                                 </a>
                             </div>
                             <div class="search__close">
@@ -125,7 +133,8 @@
                         <div class="row align-items-center">
                             <div class="col-xl-4">
                                 <div class="main-logo ">
-                                    <a href="index.html"><img src="assets/img/logo/black-logo.png" alt=""></a>
+                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo/footer-logo.png'); ?>"
+                                        alt="logo">
                                 </div>
                             </div>
                             <div class="col-xl-8">
@@ -166,6 +175,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="tp-header">
                 <div id="header-sticky" class="header-bottom black-bg d-flex align-items-center">
                     <div class="container">
@@ -179,7 +189,8 @@
                                                     <div class="row gx-6 row-cols-1 row-cols-md-2 row-cols-xl-3">
                                                         <div class="col homemenu">
                                                             <div class="homemenu-thumb mb-15">
-                                                                <img src="assets/img/menu/home-1.jpg" alt="">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/menu/home-1.jpg"
+                                                                    alt="">
                                                                 <div class="homemenu-btn">
                                                                     <a class="tp-menu-btn" href="index.html">View
                                                                         Demo</a>
@@ -193,7 +204,8 @@
                                                         </div>
                                                         <div class="col homemenu">
                                                             <div class="homemenu-thumb mb-15">
-                                                                <img src="assets/img/menu/home-2.jpg" alt="">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/menu/home-2.jpg"
+                                                                    alt="">
                                                                 <div class="homemenu-btn">
                                                                     <a class="tp-menu-btn" href="index-2.html">View
                                                                         Demo</a>
@@ -207,7 +219,8 @@
                                                         </div>
                                                         <div class="col homemenu">
                                                             <div class="homemenu-thumb mb-15">
-                                                                <img src="assets/img/menu/home-3.jpg" alt="">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/menu/home-3.jpg"
+                                                                    alt="">
                                                                 <div class="homemenu-btn">
                                                                     <a class="tp-menu-btn" href="index-3.html">View
                                                                         Demo</a>
@@ -274,13 +287,16 @@
                     </div>
                 </div>
             </div>
+
         </div>
         <div class="mobile-header d-xl-none pt-20 pb-20">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-6">
                         <div class="main-logo ">
-                            <a href="index.html"><img src="assets/img/logo/black-logo.png" alt=""></a>
+                            <a href="index.html"><img
+                                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo/footer-logo.png'); ?>"
+                                    alt=""></a>
                         </div>
                     </div>
                     <div class="col-6">
