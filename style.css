@@ -68,3 +68,52 @@
 .rc__post-title a:hover {
   color: #007bff;
 }
+
+.postbox-details-comment-wrapper {
+  margin-bottom: 50px;
+}
+
+.postbox-details-comment-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.postbox-details-comment-box {
+  margin-bottom: 20px;
+}
+
+.postbox-details-comment-thumb img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.postbox-details-comment-avater-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.postbox-details-comment-content p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.postbox-details-comment-reply .reply-link {
+  color: #ff0000;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.postbox-details-comment-reply .reply-link:hover {
+  text-decoration: underline;
+}
+
+ul.children {
+  margin-left: 40px;
+}

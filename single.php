@@ -54,21 +54,18 @@ get_header();
 
                             <?php get_template_part('template-parts/content', get_post_format()); ?>
 
+                            <?php if (comments_open() || get_comments_number()):
+                                comments_template();
+                            endif; ?>
+
                         <?php endwhile;
                     else: ?>
                         <p class="no-content-found">No content found</p>
                     <?php endif;
                     ?>
 
-                    <div class="col-xl-12">
-                        <?php
 
-                        if (function_exists('portx_pagination')) {
-                            portx_pagination();
-                        }
 
-                        ?>
-                    </div>
 
                 </div>
 
