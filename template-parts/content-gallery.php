@@ -1,6 +1,6 @@
 <?php
 
-$gallery = get_field('post_gallery');
+$gallery = function_exists('get_field') ? get_field('post_gallery') : [];
 
 ?>
 

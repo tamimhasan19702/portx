@@ -9,3 +9,62 @@
  *
  * @format
  */
+
+.sidebar__widget-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.sidebar__widget-content {
+  margin-bottom: 20px;
+}
+
+.sidebar__post .rc__post {
+  margin-bottom: 20px;
+}
+
+.rc__post.d-flex {
+  display: flex !important;
+  align-items: center;
+}
+
+.rc__post-thumb.mr-20 {
+  margin-right: 20px;
+}
+
+.rc__post-thumb img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.rc__post-content {
+  flex: 1;
+}
+
+.rc__meta {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.rc__meta i {
+  margin-right: 5px;
+}
+
+.rc__post-title {
+  font-size: 16px;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.rc__post-title a {
+  color: #333;
+  text-decoration: none;
+}
+
+.rc__post-title a:hover {
+  color: #007bff;
+}

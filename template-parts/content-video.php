@@ -1,6 +1,6 @@
 <?php
 
-$video_url = get_field('video_link');
+$video_url = function_exists('get_field') ? get_field('video_link') : [];
 
 ?>
 

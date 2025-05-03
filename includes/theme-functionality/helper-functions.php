@@ -300,6 +300,82 @@ function register_widgets()
         'before_title' => '<h4 class="tp-footer__widget-title">',
         'after_title' => '</h4>',
     ));
+    register_sidebar(array(
+        'name' => 'blog sidebar 1',
+        'id' => 'blog-sidebar-1',
+        'before_widget' => '<div class="sidebar__widget mb-40">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="sidebar__widget-title">',
+        'after_title' => '</h3>',
+    ));
 }
 
 add_action('widgets_init', 'register_widgets');
+
+
+function portx_pagination($query = null)
+{
+    if (!$query) {
+        global $wp_query;
+        $query = $wp_query;
+    }
+
+    // Get the current page and total number of pages
+    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+    $total_pages = $query->max_num_pages;
+
+    // Only show pagination if there are multiple pages
+    if ($total_pages > 1) {
+        $pagination = paginate_links(array(
+            'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
+            'format' => '?paged=%#%',
+            'current' => max(1, $paged),
+            'total' => $total_pages,
+            'type' => 'array',
+            'prev_text' => '',
+            'next_text' => '<i class="fa-sharp fa-solid fa-arrow-right"></i>',
+            'show_all' => false, // Avoid showing all pages (prevents dots)
+            'mid_size' => 1,     // Show only 1 page on each side of the current page
+            'end_size' => 1,     // Show 1 page at the start and end
+        ));
+
+        // Render pagination links in the desired structure
+        if ($pagination) {
+            echo '<div class="tp-pagination">';
+            echo '<nav>';
+            echo '<ul>';
+
+            foreach ($pagination as $page) {
+                // Skip dots or any non-numeric/non-icon items
+                if (strpos($page, 'dots') !== false || strpos($page, '...') !== false) {
+                    continue;
+                }
+
+                // Handle the current page
+                if (strpos($page, 'current') !== false) {
+                    preg_match('/<span[^>]*>([^<]*)<\/span>/', $page, $matches);
+                    $page_number = !empty($matches[1]) ? $matches[1] : '';
+                    if (is_numeric($page_number)) { // Only render if it's a number
+                        echo '<li><span class="current">' . esc_html($page_number) . '</span></li>';
+                    }
+                }
+                // Handle page links
+                elseif (strpos($page, 'href') !== false) {
+                    preg_match('/<a[^>]*href=["\'](.*?)["\'][^>]*>([^<]*)<\/a>/', $page, $matches);
+                    $url = !empty($matches[1]) ? $matches[1] : '#';
+                    $page_number = !empty($matches[2]) ? $matches[2] : '';
+                    // Check if it's a number or the next icon
+                    if (is_numeric($page_number)) {
+                        echo '<li><a href="' . esc_url($url) . '">' . esc_html($page_number) . '</a></li>';
+                    } elseif (strpos($page, 'fa-arrow-right') !== false) {
+                        echo '<li><a href="' . esc_url($url) . '"><i class="fa-sharp fa-solid fa-arrow-right"></i></a></li>';
+                    }
+                }
+            }
+
+            echo '</ul>';
+            echo '</nav>';
+            echo '</div>';
+        }
+    }
+}

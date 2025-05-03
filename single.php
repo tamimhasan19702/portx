@@ -17,7 +17,16 @@ get_header();
                 <div class="col-xxl-12">
                     <div class="breadcrumb__content p-relative z-index-1 ">
                         <div class="breadcrumb__list mb-10">
-                            <h3 class="breadcrumb__title mb-15">Blog Sidebar</h3>
+                            <?php
+                            if (is_page()) {
+                                $title = get_the_title();
+                            } elseif (is_single()) {
+                                $title = get_the_title();
+                            } else {
+                                $title = get_bloginfo('name');
+                            }
+                            ?>
+                            <h3 class="breadcrumb__title mb-15"><?php echo esc_html($title); ?></h3>
                             <div class="breadcrumb__item">
                                 <span><a href="index.html">Home </a></span>
                                 <span class="dvdr"> / </span>
