@@ -1,6 +1,176 @@
 <?php if (is_single()): ?>
 
 
+    <article class="postbox__item format-image mb-50 transition-3">
+        <div class="postbox__thumb m-img p-relative">
+            <a href="<?php the_permalink(); ?>">
+                <img class="w-100" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                <div class="postbox__meta-date ">
+                    <span><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a></span>
+                </div>
+            </a>
+        </div>
+        <div class="postbox__content">
+            <div class="postbox__meta d-flex justify-content-between">
+                <div class="postbox__info">
+                    <span><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><i
+                                class="fa-regular fa-solid fa-user"></i> <?php the_author(); ?></a></span>
+                    <span><i class="fa-regular fa-solid fa-location-dot"></i> <?php the_category(', '); ?></span>
+                    <span><a href="<?php comments_link(); ?>"><i class="fal fa-comments"></i>
+                            <?php comments_number(); ?></a></span>
+                </div>
+            </div>
+            <h3 class="postbox__title">
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            </h3>
+            <div class="postbox__text">
+                <p>
+                    <?php the_content(); ?>
+                </p>
+            </div>
+
+            <div class="postbox__details-share-wrapper">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-12  col-md-12 col-12">
+                        <div class="postbox__details-tag tagcloud">
+                            <span>Tag:</span>
+                            <?php
+                            $post_tags = get_the_tags();
+                            if ($post_tags) {
+                                foreach ($post_tags as $tag) {
+                                    echo '<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a> ';
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-lg-12 col-md-12 col-12">
+                        <div class="postbox__details-share text-end">
+                            <span>Share:</span>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"
+                                target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/home?status=<?php the_title(); ?> - <?php the_permalink(); ?>"
+                                target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/?url=<?php the_permalink(); ?>" target="_blank"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=&description=<?php the_title(); ?>"
+                                target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="postbox-details-author d-sm-flex align-items-start">
+                <div class="postbox-details-author-thumb">
+                    <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+                        <img src="<?php echo get_avatar_url(get_the_author_meta('ID')); ?>" alt="<?php the_author(); ?>">
+                    </a>
+                </div>
+                <div class="postbox-details-author-content">
+                    <h5 class="postbox-details-author-title">
+                        <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a>
+                    </h5>
+                    <?php if (get_the_author_meta('description')): ?>
+                        <p><?php the_author_meta('description'); ?></p>
+                    <?php endif; ?>
+
+                    <?php
+                    $socials = array('facebook', 'twitter', 'linkedin', 'vimeo');
+                    if (get_the_author_meta('facebook') || get_the_author_meta('twitter') || get_the_author_meta('linkedin') || get_the_author_meta('vimeo')): ?>
+                        <div class="postbox-details-author-social">
+                            <?php foreach ($socials as $social): ?>
+                                <?php if (get_the_author_meta($social)): ?>
+                                    <a href="<?php echo get_the_author_meta($social); ?>"><i
+                                            class="fa-brands fa-<?php echo $social; ?>"></i></a>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <div class="postbox-details-comment-wrapper">
+        <h3 class="postbox-details-comment-title">02 Comments</h3>
+        <div class="postbox-details-comment-inner">
+            <ul>
+                <li>
+                    <div class="postbox-details-comment-box d-sm-flex align-items-start">
+                        <div class="postbox-details-comment-thumb">
+                            <img src="assets/img/blog-detials/user.png" alt="">
+                        </div>
+                        <div class="postbox-details-comment-content">
+                            <div class="postbox-details-comment-top d-flex justify-content-between align-items-start">
+                                <div class="postbox-details-comment-avater">
+                                    <h4 class="postbox-details-comment-avater-title">Mithcel Adnan</h4>
+                                </div>
+                            </div>
+                            <p>Curabitur luctus nisl in justo maximus egestas. Curabitur sit amet sapien vel
+                                nunc molestie pulvinar at vitae quam. Aliquam lobortis nisi vitae congue
+                                consectetur. Aliquam et quam non metus </p>
+                            <div class="postbox-details-comment-reply">
+                                <a href="#">Reply</a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="children">
+                        <li>
+                            <div class="postbox-details-comment-box d-sm-flex align-items-start">
+                                <div class="postbox-details-comment-thumb">
+                                    <img src="assets/img/blog-detials/user-2.png" alt="">
+                                </div>
+                                <div class="postbox-details-comment-content">
+                                    <div
+                                        class="postbox-details-comment-top d-flex justify-content-between align-items-start">
+                                        <div class="postbox-details-comment-avater">
+                                            <h4 class="postbox-details-comment-avater-title">Liza Olivarez</h4>
+                                        </div>
+                                    </div>
+                                    <p>Curabitur luctus nisl in justo maximus egestas. Curabitur sit amet sapien
+                                        vel nunc molestie pulvinar at vitae quam. Aliquam lobortis nisi vitae
+                                        congue consectetur. Aliquam et quam non metus </p>
+                                    <div class="postbox-details-comment-reply">
+                                        <a href="#">Reply</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="postbox__comment-form">
+        <h3 class="postbox__comment-form-title">Leave Your Comment</h3>
+        <form action="#">
+            <div class="row">
+                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <div class="postbox__comment-input">
+                        <input type="text" placeholder="Your Name">
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <div class="postbox__comment-input">
+                        <input type="email" placeholder="Email Address">
+                    </div>
+                </div>
+                <div class="col-xxl-12">
+                    <div class="postbox__comment-input">
+                        <textarea placeholder="Write Your Comment"></textarea>
+                    </div>
+                </div>
+                <div class="col-xxl-12">
+                    <div class="postbox__comment-btn">
+                        <button type="submit" class="thm-btn">SUBMIT COMMENTS</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
 
 <?php else: ?>
 
