@@ -46,4 +46,23 @@
     </div>
 
 
-    <?php get_template_part('template-parts/header/header-1'); ?>
+    <?php
+
+    $header_field = function_exists('get_field') ? get_field('header_type') : '';
+    $header_type = get_theme_mod('portx_header_type', 'header-1');
+
+    if ($header_type == 'header-1') {
+        get_template_part('template-parts/header/header-1');
+    } elseif ($header_type == 'header-2') {
+        get_template_part('template-parts/header/header-2');
+    } else {
+        if ($header_field == 'header-1') {
+            get_template_part('template-parts/header/header-1');
+        } elseif ($header_field == 'header-2') {
+            get_template_part('template-parts/header/header-2');
+        }
+    }
+
+
+
+    ?>
