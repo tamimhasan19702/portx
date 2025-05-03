@@ -1,9 +1,37 @@
+<?php
+
+$gallery = get_field('post_gallery');
+
+?>
+
 <article style="margin-bottom: 20px;" class="<?php post_class("postbox__item format-image mb-50 transition-3"); ?>"
     id="post-<?php the_ID(); ?>">
     <div class="postbox__thumb m-img">
-        <a href="<?php the_permalink(); ?>">
-            <img class="w-100 max-w-100" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
-        </a>
+
+
+        <div class="postbox__thumb-slider p-relative">
+            <div
+                class="swiper-container postbox__thumb-slider-active swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+                <div class="swiper-wrapper">
+                    <?php foreach ($gallery as $image): ?>
+                        <div class="swiper-slide">
+                            <img class="w-100 max-w-100" src="<?php echo $image['url']; ?>"
+                                alt="<?php echo $image['alt']; ?>" />
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+            <div class="postbox__slider-arrow-wrap">
+                <button class="postbox-arrow-prev">
+                    <i class="fa-sharp fa-solid fa-arrow-left"></i>
+                </button>
+                <button class="postbox-arrow-next">
+                    <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
     </div>
     <div class="postbox__content">
         <div class="postbox__meta">

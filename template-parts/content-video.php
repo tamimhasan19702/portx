@@ -1,9 +1,19 @@
+<?php
+
+$video_url = get_field('video_link');
+
+?>
+
 <article style="margin-bottom: 20px;" class="<?php post_class("postbox__item format-image mb-50 transition-3"); ?>"
     id="post-<?php the_ID(); ?>">
     <div class="postbox__thumb m-img">
         <a href="<?php the_permalink(); ?>">
             <img class="w-100 max-w-100" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
         </a>
+        <div class="postbox__play-btn">
+            <a class="popup-video pulse-btn" href="<?php echo $video_url; ?>"><i
+                    class="fa-sharp fa-solid fa-play"></i></a>
+        </div>
     </div>
     <div class="postbox__content">
         <div class="postbox__meta">
