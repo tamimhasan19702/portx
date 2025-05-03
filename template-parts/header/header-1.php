@@ -86,13 +86,7 @@ $header_button_url = get_theme_mod('portx_header_button_url');
 
 
                                 <?php
-                                wp_nav_menu(array(
-                                    'theme_location' => 'main-menu', // Register this in functions.php if not already
-                                    'container' => 'nav',
-                                    'container_class' => 'tp-main-menu-content',
-                                    'items_wrap' => '<ul>%3$s</ul>',
-                                    'walker' => new Portx_Walker_Nav_Menu(),
-                                ));
+                                portx_header_menu();
                                 ?>
 
 

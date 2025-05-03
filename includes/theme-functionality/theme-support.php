@@ -39,6 +39,7 @@ if (!function_exists('portx_setup')):
         register_nav_menus(array(
             'main-menu' => __('Main Menu', 'portx'),
             'footer-menu' => __('Footer Menu', 'portx'),
+            'bottom-footer-menu' => __('Bottom Footer Menu', 'portx'),
         ));
 
         /*
@@ -73,9 +74,14 @@ if (!function_exists('portx_setup')):
             'flex-height' => true
         ));
 
-        remove_theme_support('widgets-block-editor');
 
+        // Enable support for widgets
+        add_theme_support('widgets');
 
+        // Enable Classic Editor by default for posts and widgets
+        add_filter('use_block_editor_for_post_type', '__return_false', 10);
+        add_filter('gutenberg_use_widgets_block_editor', '__return_false', 10);
+        add_filter('use_widgets_block_editor', '__return_false', 10);
 
     }
 endif; // portx_setup

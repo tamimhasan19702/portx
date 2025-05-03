@@ -153,3 +153,41 @@ function portx_header_section()
 }
 
 portx_header_section();
+
+
+function portex_footer_section()
+{
+    if (class_exists('Kirki\Section')) {
+        \Kirki::add_section('portx_footer_section', [
+            'title' => esc_html__('Portx Footer Options', 'portx'),
+            'panel' => 'portx_kirki_panel',
+            'priority' => 160,
+        ]);
+
+        if (class_exists('Kirki\Field')) {
+
+            \Kirki::add_field('portx_footer_copyright', [
+                'type' => 'text',
+                'settings' => 'portx_footer_copyright',
+                'label' => esc_html__('Footer Copyright Text', 'portx'),
+                'description' => esc_html__('Text displayed in the footer copyright section.', 'portx'),
+                'section' => 'portx_footer_section',
+                'default' => esc_html__('© 2023 Portx. All rights reserved.', 'portx'),
+            ]);
+
+            \Kirki::add_field('portx_show_car_png', [
+                'type' => 'checkbox',
+                'settings' => 'portx_show_car_png',
+                'label' => esc_html__('Show Car PNG', 'portx'),
+                'description' => esc_html__('Show car png in the footer section.', 'portx'),
+                'section' => 'portx_footer_section',
+                'default' => true,
+            ]);
+
+        }
+
+
+    }
+}
+
+portex_footer_section();

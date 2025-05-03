@@ -1,6 +1,7 @@
 <?php
 
-
+$searchformLogo = get_theme_mod('portx_search_logo', esc_url(get_template_directory_uri() . '/assets/img/logo/footer-logo.png'));
+$searchformPlaceholder = get_theme_mod('portx_search_placeholder', 'Type here to search...');
 
 ?>
 
@@ -12,8 +13,8 @@
                     <div class="search__top d-flex justify-content-between align-items-center">
                         <div class="search__logo">
                             <a href="index.html">
-                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo/footer-logo.png'); ?>"
-                                    alt="logo">
+                                <?php if ($searchformLogo) { ?><img src="<?php echo esc_url($searchformLogo); ?>"
+                                        alt="<?php echo esc_attr(get_bloginfo('name')); ?>"> <?php } ?>
                             </a>
                         </div>
                         <div class="search__close">
@@ -31,7 +32,8 @@
                     <div class="search__form">
                         <form action="#">
                             <div class="search__input">
-                                <input class="search-input-field" type="text" placeholder="Type here to search...">
+                                <input class="search-input-field" type="text"
+                                    placeholder="<?php echo esc_attr($searchformPlaceholder); ?>">
                                 <span class="search-focus-border"></span>
                                 <button type="submit">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
