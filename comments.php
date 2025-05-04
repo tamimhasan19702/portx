@@ -12,7 +12,7 @@ if (comments_open() && !post_password_required()) :
                 esc_html(_n('%02d Comment', '%02d Comments', $comment_count, 'exdos')),
                 number_format_i18n($comment_count)
             );
-            ?>
+        ?>
     </h3>
     <div class="postbox-details-comment-inner">
         <ul>
@@ -24,7 +24,7 @@ if (comments_open() && !post_password_required()) :
                     'callback' => 'custom_comment_list',
                     'max_depth' => get_option('thread_comments_depth', 5),
                 ]);
-                ?>
+            ?>
         </ul>
 
         <?php
@@ -33,7 +33,7 @@ if (comments_open() && !post_password_required()) :
                 'next_text' => esc_html__('Next', 'exdos'),
                 'screen_reader_text' => esc_html__('Comments navigation', 'exdos'),
             ]);
-            ?>
+        ?>
     </div>
     <?php endif; ?>
 
@@ -61,6 +61,7 @@ if (comments_open() && !post_password_required()) :
         'logged_in_as' => '',
         'format' => 'html5',
         'action' => site_url('/wp-comments-post.php'), // WordPress comment processing URL
+        'class_submit' => 'thm-btn', // Added to ensure submit button has consistent class
     ]);
     ?>
 </div><!-- #comments -->
@@ -89,7 +90,7 @@ function custom_comment_list($comment, $args, $depth) {
 <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
     <div class="postbox-details-comment-box d-sm-flex align-items-start">
         <div class="postbox-details-comment-thumb">
-            <?php echo get_avatar($comment, $args['avatar_size']); ?>
+            <?php echo get_avatar($comment, $args['avatar_size'], '', '', ['class' => 'img-fluid']); ?>
         </div>
         <div class="postbox-details-comment-content">
             <div class="postbox-details-comment-top d-flex justify-content-between align-items-start">
@@ -104,6 +105,8 @@ function custom_comment_list($comment, $args, $depth) {
                             'depth' => $depth,
                             'max_depth' => $args['max_depth'],
                             'reply_text' => esc_html__('Reply', 'exdos'),
+                            'before' => '<a href="#" class="comment-reply-link">',
+                            'after' => '</a>',
                         ]));
                         ?>
             </div>
